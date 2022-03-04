@@ -1,0 +1,203 @@
+#include <stdio.h>
+int num, num2, num3, option1, ran_num, gate;
+num = 0;
+num2 = 0;
+num3 = 0;
+ran_num = randint(1, 12);
+gate = randint(1, 131);
+string_t name1, name2;
+int beginning(){  //Getting character name information
+    while(num3 != 1){
+        printf("Choose Your Own Adventure\n");
+        printf("To begin, enter 1 \nTo see a roadmap, enter 2\n");
+        scanf("%d", &num);
+        if(num == 1) {
+            printf("Enter the names of the characters you want to use\n");
+            printf("Character 1: ");
+            scanf("%s", &name1);
+            printf("Character 2: ");
+            scanf("%s", &name2);
+            num3 = 1;
+        }
+        else if(num == 2) {
+            printf("                            Road Map\n");
+            printf("                          Introduction\n");
+            printf("                        /       |       \\\n");
+            printf("                     /          |            \\\n");
+            printf("                /               |                  \\\n");
+            printf("         United               Delta                 Arik\n");
+            printf("           |                    |                     |\n");
+            printf("      |----|----|               |                |----|----|\n");
+            printf("   |       |       |            |            |        |         |\n");
+            printf("  Water  Soda  Fruit Juice      |      Economy   Business   First Class\n");
+            printf("                           |----|----|              \n");
+            printf("                        |       |       |            \n");
+            printf("                   Waiting    Flying   Exploring\n");
+            printf("              Enter any number to return to the menu.\n");
+            scanf("%d", &num);
+    }
+}
+return 0;}
+int introduction(string_t name1, string_t name2){  //introduction
+    printf("Introduction:\n");
+    printf("%s and %s are on an adventure to find the mysterious and elusive macguffin. \n", name1, name2, \
+"In order to find the macguffin, they must travel to Nigeria where legends \nsay that it is hidden deep\
+ within the mountain of Chappal Waddi. %s and %s travel to the\n", name1, name2, "United States where they \
+arrive in New York to start their journey. %s and %s land in\nJFK at %d:00", name1, name2, ran_num, \
+" in the morning and are faced with their first tough decision. \
+Before they can get to Nigeria,\nthey must choose the airline that will\
+ take them there. The 3 choices are: \n\
+1. United Airlines \n2. Delta Airlines \n3. Arik Air\n");
+return 0;
+    }
+int united (){  //option1
+    printf("%s and %s choose United Airlines as the one to get them to Nigeria. They buy their \
+tickets and board gate %d.\n",name1, name2, gate, "%s and %s arrive at gate %d" ,name1, name2, gate,
+    " just in time to board the plane.\n%s and %s sit in their seats and prepare themselves for the\
+long flight that is ahead of them.\n", name1, name2, "After a couple of hours, a steward offers \
+them 3 drinks to choose from. Which drink should they choose?\n1.Water\n2.Soda\n3.Fruit Juice\n");
+    return 0;
+}
+int delta(){    //option2
+    printf("%s and %s choose Delta Airlines as the one to get them to Nigeria.\n", name1, name2,"\
+They get their tickets and head to gate %d to await the arrival of their plane.\n", gate, "\
+However, when they get there, %s and %s are told that their flight is overbooked and \
+that they can not board the plane. Disappointed, they walk out of the airport with their heads hanging low.\n",name1, name2,"At first, they do not know what to do,\
+but then they come up with 3 solutions to their problems.\nThese are to sit and wait in the airport, \
+book another flight, or go explore New York City.\n1.Wait\n2.Book Another Flight\n3.Explore the Nearby City\n");
+    return 0;
+}
+int arik(){     //option3
+    printf("%s and %s choose Arik Air as the one to get them to Nigeria.\n", name1, name2,\
+"But before they get their tickets, %s and %s decide to buy supplies for their future \
+adventure in Nigeria.\n", name1, name2, "%s and %s", name1, name2, " buy snacks, drinks, clothes, a machete to cut \
+through the thick jungle, several pounds\nof plastic explosives, and many other things that will \
+conveniently get through airport security.\nAfter a large and hearty meal, they are ready to go. \
+Now that ",name1, " and ", name2, " have their supplies,they decide to finally \nbuy their tickets to get to \
+Nigeria. When they go to buy their tickets,", name1," and ", name2, " are faced with the \
+decision\non what kind of ticket that they should buy.\nShould they fly:\n\
+1.Economy Class\n2.Buisness class\n3.First Class\n");
+    return 0;
+}
+int choice_pick(){  //function for making choices
+    printf("Which option do you choose? 1, 2, or 3?\n");
+    printf("Type your answer here: ");
+    scanf("%d", &option1);
+    while (num2 == 0){ 
+        if (option1 == 1){
+            num2 = 1;
+            
+        }
+        else if (option1 == 2){
+            num2 = 1;
+        }
+        else if (option1 == 3){
+            num2 = 1;
+        }
+        else{
+            printf("Type a valid answer: ");
+            scanf("%d", &option1);
+        }
+    }
+    return 0;
+}
+int end1(){     //end1
+    printf("Water Ending\n");
+    printf("%s and %s decide to choose water as their beverage and are offered it in a cup or bottle. \n\
+", name1, name2, "%s decides to drink their water from the cup and %s takes the bottled water.\n\
+", name1, name2, "%s, being very thirsty, drinks their water quickly while %s doesn't drink theirs\
+at all.\n", name2, name1,"%s is then offered to go see the cockpit, because of plot convenience, and \
+takes their cup of water with them.\n", name1,"%s goes into the cockpit and trips on their\
+ shoelaces.\n", name1,"This causes their water to spill onto the controls and the plane crashes,\
+ leaving no survivors.\n");
+    return 0;
+}
+int end2(){     //end2
+    printf("Soda Ending\n");
+    printf("%s and %s decide to choose soda as their beverage and each takes a can. \n\
+", name1, name2, "%s gets a can of Pepsi and %s chooses a can of Coke.\n\
+", name1, name2, "%s and %s soon get into a heated debate on which cola is the superior soda.\n\
+", name2, name1,"The argument becomes so heated in fact that %s grabs %s's Pepsi and throws it \
+to the ground,\nsmashing the can under their feet.\n", name2, name1,"%s becomes so enraged that \
+they grab the can of Coke and throws it at the window, breaking it.\n", name1,"This causes cabin\
+ depressurization and the plane crashes.\n");
+    return 0;
+}
+int end3(){     //end3
+    printf("Fruit Juice Ending\n");
+    printf("%s and %s decide to choose fruit juice as their beverage and each takes a juice box. \n\
+", name1, name2, "%s and %s each get a box of orange juice, and then decide not to drink it.\n\
+", name1, name2, "%s grows tired of holding their box and throws it into the walkway.\n\
+", name2,"%s's juicebox is then crushed by %s's foot as they get up to go to the bathroom \
+and \njuice sprays all over a random person's computer.", name2, name1,"Smoke starts coming out\
+ of the computer and then catches on fire.\nThis then spreads to the rest of the plane and \
+causes it to crash.\n");
+    return 0;
+}
+int end4(){     //end4
+    printf("Waiting Ending\n");
+    printf("%s and %s decide to sit and wait at the airport for something to happen to them. \n\
+", name1, name2, "%s and %s sit in the lounge and wait, and wait, and wait.\n\
+", name1, name2,"They wait so long in fact that they decide to live in the airport.\n\
+Soon enough, word spreads and suddenly reporters surround them, \nasking them millions of questions about\
+ why they decided to live in the airport.\n%s and %s say that they did it because they were bored and\
+ didn't live happily ever after.\n", name1, name2);
+    return 0;
+}
+int end5(){     //end5
+    printf("Flying Ending\n");
+    printf("%s and %s decide to book another flight at the airport so that they can reach Nigeria. \n\
+", name1, name2, "%s and %s talk with an employee and, after a copious amount of bribes, manage to get \
+another flight.\n", name1, name2,"They board their plane quickly, and take their seats, ready for the \
+flight ahead.\nSoon enough, they are flying through the sky across the Atlantic ocean.\n\
+Just then, a bolt of lightning strikes their plane and %s and %s perish along with the rest of the \
+passengers.\n", name1, name2);
+    return 0;
+}
+int end6(){     //end6
+    printf("Explore Ending\n");
+    printf("%s and %s make the best of their situation and decide to go explore \
+the nearby cities of New York and Queens.\n", name1, name2,"%s and %s \
+see all the sights including the Statue of Liberty, Empire State Building, Central Park, \n\
+and many other places that they found on a list on the internet.\n",name1, name2,"\
+%s and %s grow hungry and decide to eat at a rather dodgy restaurant and get sick from eating \
+its food.\n", name1, name2,"%s takes %s to a dark alley so that they can vomit, but \
+then a suspicious person comes up from behind them.\n", name1, name2,"\
+They throw bags over their heads and soon enough they are in the back of a car, headed to an \
+unknown fate.\n");
+    return 0;
+}
+int end7(){     //end7
+    printf("Economy Ending\n");
+    printf("%s and %s decide to be cheapskates and get two tickets for economy class \
+seats.\n",name1, name2,"They board the plane, and find that the seats are very uncomfortable \
+and entirely unsuited for a transatlantic flight.\nAfter several hours of discomfort and \
+complaining, %s and %s finally reach Nigeria.\n", name1, name2,"And then, after their long \
+trip, they choose to head straight back to their homes because they had decided that the \n\
+macguffin was not worth the trouble of the journey.\nIf they could barely survive the \
+flight, who knows what would happen to them if they encountered an actual form of danger.\n");
+    return 0;
+}
+int end8(){     //end8
+    printf("Buisness Ending\n");
+    printf("%s and %s decide to not break the bank by getting two tickets for business seats.\n",name1, name2,"\
+They board the plane, take their seats, and enjoy some refreshments.\nSoon enough they arrive in \
+Nigeria safe and sound.\nThey get a taxi that takes them to their hotel and are enjoying a simple \
+dinner\nbefore they rest for the adventure that awaits them tomorrow.\nWhen %s wakes up the \
+next morning, they open the curtains to let the beautiful\nsunlight in and puts on their shoes \
+to search for the macguffin.\n", name2);
+    return 0;
+}
+int end9(){     //end9
+    printf("First Class Ending\n");
+    printf("%s and %s go all in on their plane tickets and get two tickets for first \
+class seats.\n",name1, name2,"They enter the lounge and enjoy the buffet that awaits them inside.\n\
+%s and %s then board the plane and take in all the amenities that come with flying first class.\n", name1, name2,"\
+After arriving in Nigeria, they exit the airport, refreshed from their sleep in their first \
+class cabins.\nBut then, as they go to call a taxi, they realize that they have no money left \
+as a result of them paying thousands of \ndollars on the flight alone.\nWith no way to get \
+home, %s and %s resort to stealing a pillaging from the surrounding \
+neighborhoods, which lands them in jail.\n",name1, name2);
+    return 0;
+}
+int main(){  //MAIN
